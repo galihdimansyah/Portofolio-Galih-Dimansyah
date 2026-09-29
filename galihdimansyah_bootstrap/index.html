@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link href="vendor/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- bagian navbar -->
+  <nav class="navbar sticky-top navbar-expand-lg bg-primary" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">Galih Dimansyah</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#paraf">Paragraf</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#tabel">Tabel</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#galery">Galery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About Me</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- bagian content -->
+  <div class="container">
+    <div class="row mt-2">
+      <div class="col-md-12" id="paraf">
+        <h1>Hello, world!</h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-3">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, magnam quas deserunt ab rem, cum nisi non
+          delectus quo consequatur dolorum placeat dolore dolor vel a iste, consequuntur nam. Doloribus repudiandae,
+          beatae fugiat labore, minus rerum numquam, ea quo odio consequuntur accusantium libero dolor quisquam placeat.
+          Voluptatibus mollitia et architecto?</p>
+      </div>
+
+      <div class="col-md-6">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit maxime fugiat earum, quam ipsam quibusdam?
+          Minima omnis, nulla vel adipisci provident voluptates iusto praesentium dolores quibusdam sequi animi
+          consequatur, sint, molestiae saepe eligendi vero earum modi blanditiis aperiam. Dignissimos, eos! Libero illo
+          placeat suscipit unde. Ipsum voluptatem fugiat pariatur assumenda?</p>
+      </div>
+
+      <div class="col-md-3">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis dolor maiores excepturi deserunt
+          deleniti quod qui in. Sunt consequuntur dolore dolor quisquam provident quis facilis voluptates minus? Tempore
+          laborum, iure neque eaque quia atque totam nisi laboriosam voluptatibus voluptas voluptatum non provident
+          sequi, porro minima, quaerat veniam tempora cum. Corrupti.</p>
+      </div>
+    </div>
+
+    <div class="row mt-2" id="tabel" hover>
+      <div class="col-md-12">
+        <h1>Contoh Tabel</h1>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">No</th>
+              <th scope="col">Nama Siswa</th>
+              <th scope="col">Kelas</th>
+              <th scope="col">Aksi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Galih Dimansyah</td>
+              <td>XI PPLG 2</td>
+              <td>
+                <a href="#" class="btn btn-outline-primary">Edit</a>
+                <a href="#" class="btn btn-outline-danger">Hapus</a>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Nazril Dwi Radika</td>
+              <td>XI PPLG 2</td>
+              <td>
+                <a href="#" class="btn btn-outline-primary">Edit</a>
+                <a href="#" class="btn btn-outline-danger">Hapus</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="row mt-2" id="galery">
+      <h1>Galery</h1>
+      <div class="col-md-4">
+        <div class="card" style="width: 18rem;">
+          <img src="img/developer.jpeg" class="card-img-top" alt="Gambar Developer">
+          <div class="card-body">
+            <h5 class="card-title">Developer</h5>
+            <p class="card-text">Programer muda yang ahli dalam bidang pengembangan perangkat lunak.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card" style="width: 18rem;">
+          <img src="img/si ganteng.jpeg" class="card-img-top" alt="Gambar Ganteng">
+          <div class="card-body">
+            <h5 class="card-title">Galih</h5>
+            <p class="card-text">Seseorang yang memiliki penampilan menarik dan suka berpakaian rapi.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card" style="width: 18rem;">
+          <img src="img/Ahli IT.jpeg" class="card-img-top" alt="Gambar Ahli IT">
+          <div class="card-body">
+            <h5 class="card-title">Ahli IT</h5>
+            <p class="card-text">Seseorang yang ahli dalam bidang teknologi informasi dan komunikasi.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" id="contact">
+      <div class="col-md-5">
+        <h1>Contact Us</h1>
+        <form>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" required>
+          </div>
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+
+      <div class="col-md-7" id="about">
+        <h1>About Me</h1>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.2237802617005!2d103.64153127406549!3d-1.619918836079872!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e25888b1224749f%3A0xba13725b9daf95ba!2sSekolah%20Menengah%20Kejuruan%20Negeri%202%20Kota%20Jambi!5e0!3m2!1sid!2sid!4v1790659986288!5m2!1sid!2sid"
+          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      </div>
+
+      <!-- end row -->
+    </div>
+
+    <!-- end container -->
+  </div>
+
+  <!-- bagian footer -->
+  <script src="vendor/js/bootstrap.bundle.js"></script>
+</body>
+
+</html>
