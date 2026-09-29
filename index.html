@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portofolio Galih Dimansyah, Junior Software Developer lulusan PPLG SMK Negeri 2 Kota Jambi.">
+  <title>Galih Dimansyah | Junior Software Developer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="vendor/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --ink: #14213d;
+      --ink-soft: #4a5568;
+      --paper: #f6f8fb;
+      --card: #ffffff;
+      --line: #e2e8f0;
+      --teal: #0f8b8d;
+      --teal-dark: #0b6b6d;
+      --amber: #0b6b6d;
+      --bs-primary: var(--teal);
+      --bs-primary-rgb: 15, 139, 141;
+      --bs-body-font-family: 'Public Sans', system-ui, sans-serif;
+      --bs-body-color: var(--ink-soft);
+      --bs-body-bg: var(--paper);
+    }
+
+    html { scroll-behavior: smooth; }
+    body { line-height: 1.7; }
+    section { scroll-margin-top: 72px; padding: 5rem 0; }
+    h1, h2, h3, h4, h5, .navbar-brand { font-family: 'Bricolage Grotesque', sans-serif; color: var(--ink); letter-spacing: -.01em; }
+    h2 { font-weight: 700; font-size: clamp(1.75rem, 3vw, 2.25rem); }
+    .section-lead { max-width: 60ch; }
+
+    /* Navbar */
+    .navbar { background: rgba(255, 255, 255, .92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+    .navbar-brand { font-weight: 800; color: var(--ink); }
+    .navbar-brand span { color: var(--teal); }
+    .nav-link { color: var(--ink-soft); font-weight: 500; }
+    .nav-link:hover, .nav-link.active { color: var(--teal); }
+
+    /* Buttons */
+    .btn-primary { --bs-btn-bg: var(--teal); --bs-btn-border-color: var(--teal); --bs-btn-hover-bg: var(--teal-dark); --bs-btn-hover-border-color: var(--teal-dark); --bs-btn-active-bg: var(--teal-dark); --bs-btn-active-border-color: var(--teal-dark); font-weight: 600; }
+    .btn-outline-dark { --bs-btn-color: var(--ink); --bs-btn-border-color: var(--ink); --bs-btn-hover-bg: var(--ink); --bs-btn-hover-border-color: var(--ink); font-weight: 600; }
+    .btn:focus-visible, .nav-link:focus-visible, .form-control:focus { outline: 3px solid rgba(15, 139, 141, .4); outline-offset: 2px; box-shadow: none; }
+
+    /* Hero */
+    #home { padding: 4.5rem 0 5rem; background: linear-gradient(180deg, #fff 0%, var(--paper) 100%); }
+    #home h1 { font-weight: 800; font-size: clamp(2.25rem, 5.5vw, 3.6rem); line-height: 1.1; }
+    .role { font-weight: 600; color: var(--teal-dark); }
+    .hero-photo { position: relative; max-width: 340px; margin-inline: auto; }
+    .hero-photo::before { content: ""; position: absolute; inset: 18px -18px -18px 18px; background: var(--amber); border-radius: 1.5rem; z-index: 0; }
+    .hero-photo img { position: relative; z-index: 1; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 1.5rem; border: 6px solid #fff; background: var(--line); }
+    .tag { display: inline-block; padding: .25rem .75rem; margin: 0 .35rem .5rem 0; border: 1px solid var(--line); border-radius: 2rem; background: #fff; font-size: .875rem; font-weight: 500; color: var(--ink); }
+
+    /* About */
+    .fact { display: flex; gap: .9rem; align-items: flex-start; padding: 1rem 0; border-bottom: 1px solid var(--line); }
+    .fact:last-child { border-bottom: 0; }
+    .fact i { color: var(--teal); font-size: 1.25rem; line-height: 1.5; }
+    .fact strong { display: block; color: var(--ink); }
+
+    /* Skills */
+    #keahlian { background: #fff; }
+    .skill + .skill { margin-top: 1.5rem; }
+    .skill-head { display: flex; justify-content: space-between; font-weight: 600; color: var(--ink); margin-bottom: .4rem; }
+    .progress { height: .7rem; background: var(--line); border-radius: 1rem; }
+    .progress-bar { width: 0; background: var(--teal); border-radius: 1rem; transition: width 1.2s cubic-bezier(.22, .8, .3, 1); }
+    .skill:nth-child(even) .progress-bar { background: var(--ink); }
+    .skill small { color: var(--ink-soft); }
+
+    /* Timeline */
+    .timeline { position: relative; padding-left: 1.75rem; border-left: 2px solid var(--line); }
+    .timeline-item { position: relative; padding-bottom: 2rem; }
+    .timeline-item:last-child { padding-bottom: 0; }
+    .timeline-item::before { content: ""; position: absolute; left: calc(-1.75rem - 7px); top: .45rem; width: 12px; height: 12px; border-radius: 50%; background: var(--teal); border: 3px solid var(--paper); box-sizing: content-box; }
+    .timeline-item .when { font-size: .875rem; font-weight: 600; color: var(--teal-dark); }
+
+    /* Projects */
+    #proyek { background: #fff; }
+    .project { border: 1px solid var(--line); border-radius: 1rem; overflow: hidden; background: var(--card); transition: box-shadow .2s, transform .2s; }
+    .project:hover { box-shadow: 0 12px 28px rgba(20, 33, 61, .1); transform: translateY(-3px); }
+    .project img { height: 210px; width: 100%; object-fit: cover; background: var(--line); }
+
+    /* Contact */
+    .contact-box { background: var(--card); border: 1px solid var(--line); border-radius: 1rem; padding: 1.75rem; }
+    .form-control { border-color: var(--line); padding: .7rem .9rem; }
+    .map-wrap { border-radius: 1rem; overflow: hidden; border: 1px solid var(--line); }
+
+    footer { background: var(--ink); color: #cbd5e1; }
+    footer a { color: #fff; text-decoration: none; }
+
+    @media (max-width: 767.98px) {
+      section { padding: 3.5rem 0; }
+      .hero-photo { max-width: 260px; margin-bottom: 1.5rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .progress-bar, .project { transition: none; }
+    }
+  </style>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="80" tabindex="0">
+
+  <!-- Navbar -->
+  <nav class="navbar sticky-top navbar-expand-lg" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="#home">Galih<span> </span>Dimansyah</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+        aria-controls="navMenu" aria-expanded="false" aria-label="Buka menu navigasi">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-lg-1">
+          <li class="nav-item"><a class="nav-link" href="#home">Beranda</a></li>
+          <li class="nav-item"><a class="nav-link" href="#tentang">Tentang Saya</a></li>
+          <li class="nav-item"><a class="nav-link" href="#keahlian">Keahlian</a></li>
+          <li class="nav-item"><a class="nav-link" href="#pengalaman">Pengalaman</a></li>
+          <li class="nav-item"><a class="nav-link" href="#proyek">Proyek</a></li>
+          <li class="nav-item ms-lg-2 mt-2 mt-lg-0"><a class="btn btn-primary btn-sm px-3" href="#kontak">Hubungi Saya</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero -->
+    <section id="home">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-7 order-2 order-lg-1">
+            <p class="role mb-2">Junior Software Developer</p>
+            <h1 class="mb-3">Halo, saya Galih Dimansyah.</h1>
+            <p class="fs-5 mb-4 section-lead">Siswa PPLG SMK Negeri 2 Kota Jambi yang membangun website responsif dan rapi, serta siap belajar dan berkontribusi di tim pengembangan web.</p>
+            <div class="mb-4">
+              <span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">JavaScript</span><span class="tag">Bootstrap 5</span>
+            </div>
+            <a href="#kontak" class="btn btn-primary btn-lg me-2 mb-2">Hubungi saya</a>
+            <a href="#proyek" class="btn btn-outline-dark btn-lg mb-2">Lihat proyek</a>
+          </div>
+          <div class="col-lg-5 order-1 order-lg-2">
+            <div class="hero-photo">
+              <img src="img/si ganteng.jpeg" alt="Foto Galih Dimansyah">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tentang -->
+    <section id="tentang">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-6">
+            <h2 class="mb-3">Tentang saya</h2>
+            <p>Saya siswa jurusan Pengembangan Perangkat Lunak dan Gim (PPLG) di SMK Negeri 2 Kota Jambi. Saya fokus pada pengembangan web: membuat tampilan yang responsif di semua perangkat dan mengelola data secara terstruktur.</p>
+            <p>Saya disiplin, teliti pada detail, dan terbiasa bekerja dalam tim. Saya mencari kesempatan magang atau posisi junior untuk mengasah kemampuan di proyek nyata.</p>
+          </div>
+          <div class="col-lg-6">
+            <div class="fact"><i class="bi bi-mortarboard"></i><div><strong>Pendidikan</strong>SMK Negeri 2 Kota Jambi, jurusan PPLG</div></div>
+            <div class="fact"><i class="bi bi-geo-alt"></i><div><strong>Lokasi</strong>Kota Jambi, Indonesia</div></div>
+            <div class="fact"><i class="bi bi-code-slash"></i><div><strong>Bidang</strong>Web frontend dan dasar backend</div></div>
+            <div class="fact"><i class="bi bi-briefcase"></i><div><strong>Terbuka untuk</strong>Magang, PKL, dan posisi junior</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Keahlian -->
+    <section id="keahlian">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-5">
+            <h2 class="mb-3">Keahlian</h2>
+            <p>Tingkat penguasaan saya pada teknologi yang paling sering saya gunakan untuk membangun website.</p>
+          </div>
+          <div class="col-lg-7">
+            <div class="skill">
+              <div class="skill-head"><span>HTML5</span><span>90%</span></div>
+              <div class="progress" role="progressbar" aria-label="HTML5" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar" data-value="90"></div></div>
+              <small>Struktur halaman semantik dan mudah diakses.</small>
+            </div>
+            <div class="skill">
+              <div class="skill-head"><span>CSS3</span><span>85%</span></div>
+              <div class="progress" role="progressbar" aria-label="CSS3" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar" data-value="85"></div></div>
+              <small>Layout flexbox dan grid, serta desain responsif.</small>
+            </div>
+            <div class="skill">
+              <div class="skill-head"><span>JavaScript</span><span>75%</span></div>
+              <div class="progress" role="progressbar" aria-label="JavaScript" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar" data-value="75"></div></div>
+              <small>Interaksi halaman, manipulasi DOM, dan sintaks ES6+.</small>
+            </div>
+            <div class="skill">
+              <div class="skill-head"><span>Bootstrap</span><span>88%</span></div>
+              <div class="progress" role="progressbar" aria-label="Bootstrap" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar" data-value="88"></div></div>
+              <small>Grid, komponen, dan kustomisasi tema Bootstrap 5.</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pengalaman & Pendidikan -->
+    <section id="pengalaman">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-6">
+            <h2 class="mb-4">Pengalaman</h2>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="when">Sedang berjalan</div>
+                <h3 class="h5 mb-1">Pengembang Web, Proyek Sekolah</h3>
+                <p class="mb-0">Membangun website responsif dengan HTML, CSS, JavaScript, dan Bootstrap, dari perencanaan tata letak sampai pengujian di berbagai perangkat.</p>
+              </div>
+              <div class="timeline-item">
+                <div class="when">Sedang berjalan</div>
+                <h3 class="h5 mb-1">Dukungan Teknis IT</h3>
+                <p class="mb-0">Membantu menyelesaikan masalah perangkat lunak dan konfigurasi jaringan dasar di lingkungan sekolah.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <h2 class="mb-4">Pendidikan</h2>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="when">Saat ini</div>
+                <h3 class="h5 mb-1">SMK Negeri 2 Kota Jambi</h3>
+                <p class="mb-0">Pengembangan Perangkat Lunak dan Gim (PPLG). Mempelajari pemrograman web, basis data, dan dasar pengembangan aplikasi.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Proyek -->
+    <section id="proyek">
+      <div class="container">
+        <h2 class="mb-2">Proyek dan kompetensi</h2>
+        <p class="mb-4 section-lead">Tiga bidang yang paling saya kuasai. Klik detail untuk penjelasan lengkap.</p>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <article class="project h-100 d-flex flex-column">
+              <img src="img/developer.jpeg" alt="Ilustrasi pengembangan web" loading="lazy">
+              <div class="p-4 d-flex flex-column flex-grow-1">
+                <h3 class="h5">Pengembangan web responsif</h3>
+                <p>Antarmuka bersih yang nyaman dibuka di desktop, tablet, dan ponsel.</p>
+                <button class="btn btn-primary mt-auto align-self-start" data-bs-toggle="modal" data-bs-target="#detailModal"
+                  data-title="Pengembangan web responsif"
+                  data-text="Saya menyusun halaman dengan HTML semantik, mengatur tata letak memakai grid dan flexbox Bootstrap, lalu menguji tampilan di berbagai ukuran layar agar konten tetap terbaca dan mudah dinavigasi.">Lihat detail</button>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <article class="project h-100 d-flex flex-column">
+              <img src="img/si ganteng.jpeg" alt="Foto profil Galih Dimansyah" loading="lazy" style="object-position: center 20%;">
+              <div class="p-4 d-flex flex-column flex-grow-1">
+                <h3 class="h5">Etos kerja profesional</h3>
+                <p>Disiplin, rapi, dan komunikatif saat bekerja sama dalam tim.</p>
+                <button class="btn btn-primary mt-auto align-self-start" data-bs-toggle="modal" data-bs-target="#detailModal"
+                  data-title="Etos kerja profesional"
+                  data-text="Saya terbiasa menyelesaikan tugas tepat waktu, menjaga kerapian kode, dan berkoordinasi dengan anggota tim. Saya juga terbuka terhadap masukan untuk terus memperbaiki hasil kerja.">Lihat detail</button>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <article class="project h-100 d-flex flex-column">
+              <img src="img/Ahli IT.jpeg" alt="Ilustrasi dukungan teknis IT" loading="lazy">
+              <div class="p-4 d-flex flex-column flex-grow-1">
+                <h3 class="h5">Dukungan teknis IT</h3>
+                <p>Memahami dasar jaringan dan menyelesaikan masalah perangkat lunak.</p>
+                <button class="btn btn-primary mt-auto align-self-start" data-bs-toggle="modal" data-bs-target="#detailModal"
+                  data-title="Dukungan teknis IT"
+                  data-text="Saya memahami dasar infrastruktur teknologi informasi, konfigurasi jaringan sederhana, dan langkah pemecahan masalah pada perangkat lunak sehingga dapat membantu menjaga sistem tetap berjalan.">Lihat detail</button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kontak -->
+    <section id="kontak">
+      <div class="container">
+        <h2 class="mb-2">Hubungi saya</h2>
+        <p class="mb-4 section-lead">Punya lowongan magang atau pekerjaan? Kirim pesan dan saya akan membalasnya.</p>
+        <div class="row g-4">
+          <div class="col-lg-5">
+            <div class="contact-box">
+              <div id="formAlert" class="alert alert-success d-none" role="alert">Pesan siap dikirim. Terima kasih sudah menghubungi saya.</div>
+              <form id="contactForm" novalidate>
+                <div class="mb-3">
+                  <label for="inputName" class="form-label">Nama lengkap</label>
+                  <input type="text" class="form-control" id="inputName" placeholder="Masukkan nama Anda" required>
+                  <div class="invalid-feedback">Nama wajib diisi.</div>
+                </div>
+                <div class="mb-3">
+                  <label for="inputEmail" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="inputEmail" placeholder="nama@email.com" required>
+                  <div class="invalid-feedback">Masukkan alamat email yang valid.</div>
+                </div>
+                <div class="mb-3">
+                  <label for="inputMessage" class="form-label">Pesan atau tawaran kerja</label>
+                  <textarea class="form-control" id="inputMessage" rows="4" placeholder="Tuliskan pesan Anda" required></textarea>
+                  <div class="invalid-feedback">Pesan wajib diisi.</div>
+                </div>
+                <button type="submit" class="btn btn-primary w-100 py-2">Kirim pesan</button>
+              </form>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="map-wrap ratio ratio-4x3">
+              <iframe title="Lokasi SMK Negeri 2 Kota Jambi"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.2237802617005!2d103.64153127406549!3d-1.619918836079872!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e25888b1224749f%3A0xba13725b9daf95ba!2sSekolah%20Menengah%20Kejuruan%20Negeri%202%20Kota%20Jambi!5e0!3m2!1sid!2sid!4v1790659986288!5m2!1sid!2sid"
+                style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Detail modal -->
+  <div class="modal fade" id="detailModal" tabindex="-1" aria-labelledby="detailTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title h5" id="detailTitle"></h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <div class="modal-body" id="detailText"></div>
+        <div class="modal-footer">
+          <a href="#kontak" class="btn btn-primary" data-bs-dismiss="modal">Hubungi saya</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="py-4">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+      <span>&copy; 2026 Galih Dimansyah. Semua hak dilindungi.</span>
+      <a href="#home">Kembali ke atas</a>
+    </div>
+  </footer>
+
+  <script src="vendor/js/bootstrap.bundle.js"></script>
+  <script>
+    // Isi modal detail sesuai tombol yang diklik
+    document.getElementById('detailModal').addEventListener('show.bs.modal', function (e) {
+      var btn = e.relatedTarget;
+      document.getElementById('detailTitle').textContent = btn.dataset.title;
+      document.getElementById('detailText').textContent = btn.dataset.text;
+    });
+
+    // Progress bar terisi saat bagian keahlian terlihat
+    var bars = document.querySelectorAll('.progress-bar');
+    var fill = function (bar) { bar.style.width = bar.dataset.value + '%'; };
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) { fill(en.target); io.unobserve(en.target); }
+        });
+      }, { threshold: 0.4 });
+      bars.forEach(function (b) { io.observe(b); });
+    } else {
+      bars.forEach(fill);
+    }
+
+    // Validasi formulir kontak
+    var form = document.getElementById('contactForm');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var ok = true;
+      form.querySelectorAll('.form-control').forEach(function (el) {
+        var valid = el.checkValidity();
+        el.classList.toggle('is-invalid', !valid);
+        if (!valid) ok = false;
+      });
+      if (ok) {
+        document.getElementById('formAlert').classList.remove('d-none');
+        form.reset();
+      }
+    });
+
+    // Tutup menu mobile setelah tautan diklik
+    document.querySelectorAll('#navMenu .nav-link, #navMenu .btn').forEach(function (l) {
+      l.addEventListener('click', function () {
+        var menu = document.getElementById('navMenu');
+        if (menu.classList.contains('show')) bootstrap.Collapse.getOrCreateInstance(menu).hide();
+      });
+    });
+  </script>
+</body>
+
+</html>
